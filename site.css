@@ -1,0 +1,195 @@
+/* ProTherapy demo: what the kit lacks, shared by the three pages.
+   Brand from the presentation (dejan-prezentacija.vercel.app): Inter for every word, Instrument Serif Italic for
+   one word in a heading (<em>), teal #0D7480 on light, #4FC3C9 only on dark, one flat band #0D6872. */
+
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 400; font-display: swap; src: url(media/fonts/inter-400.woff2) format("woff2"); }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 500; font-display: swap; src: url(media/fonts/inter-500.woff2) format("woff2"); }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 600; font-display: swap; src: url(media/fonts/inter-600.woff2) format("woff2"); }
+@font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: swap; src: url(media/fonts/instrument-serif-italic.woff2) format("woff2"); }
+
+/* the one serif word in a heading, as in the presentation's titles */
+:is(h1, h2) em, .mo-wh__text em { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 1.1em; letter-spacing: -0.01em; line-height: 0.9; }
+.btn--xl em { font-family: var(--font-serif); font-style: italic; }
+
+/* ---------------------------------------------------------------- hero: the film in the split's frame */
+.hero__media > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--ly-pos, 50% 40%); }
+.hero__media .loop-pause { right: 16px; bottom: 16px; }
+.loop-pause .ic-play { display: none; }
+.loop-pause[aria-pressed="true"] .ic-play { display: block; }
+.loop-pause[aria-pressed="true"] .ic-pause { display: none; }
+
+/* ---------------------------------------------------------------- the line drawings (assets of the presentation) */
+.illus { margin: 0; color: var(--ink); }
+.illus svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.illus .draw { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+.illus .draw.em { stroke: var(--accent); }
+.illus .glow { fill: var(--accent); fill-opacity: 0.14; stroke: none; }
+.illus .dot { fill: var(--accent); stroke: none; }
+
+/* a drawing in a pinned step: on the surface, the figure whole (selectors outweigh moment.css, which loads later) */
+main [data-moment="pinned-chapters"] .mo-pc__visual.mo-pc__visual--lit { background: var(--surface); padding: 16px; overflow: hidden; }
+main [data-moment="pinned-chapters"] .mo-pc__visual.mo-pc__visual--lit .illus { height: 100%; width: auto; max-width: 100%; aspect-ratio: 480 / 760; margin-inline: auto; }
+main [data-moment="pinned-chapters"]:not(.is-live) .mo-pc__visual.mo-pc__visual--lit { aspect-ratio: auto; width: 100%; height: 30svh; }
+@media (max-width: 639px) { main [data-moment="pinned-chapters"]:not(.is-live) .mo-pc__visual.mo-pc__visual--lit { height: 26svh; } }
+/* at rest on a tablet the four steps fit one screen: shorter pictures */
+@media (min-width: 640px) and (max-width: 1023px) {
+  main [data-moment="pinned-chapters"]:not(.is-live) .mo-pc__visual > img { max-height: 21svh; }
+  main [data-moment="pinned-chapters"]:not(.is-live) .mo-pc__visual.mo-pc__visual--lit { height: 21svh; }
+}
+
+/* ---------------------------------------------------------------- the reels: posters that play on a click */
+.reels { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--gutter); }
+.reel { position: relative; aspect-ratio: 9 / 16; border-radius: var(--r-md); overflow: hidden; background: var(--surface); scroll-margin-top: calc(var(--nav-h, 72px) + 24px); }
+.reel__play { all: unset; position: absolute; inset: 0; cursor: pointer; display: block; }
+.reel__play img, .reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.reel video { background: #000; }
+.reel__disc { position: absolute; left: 12px; bottom: 12px; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--bg); color: var(--ink);
+  box-shadow: 0 1px 2px rgb(0 0 0 / .12), 0 4px 12px -4px rgb(0 0 0 / .28); transition: transform 200ms cubic-bezier(.2,.7,.2,1); }
+.reel__disc svg { width: 16px; height: 16px; margin-left: 2px; fill: currentColor; }
+.reel__play:hover .reel__disc, .reel__play:focus-visible .reel__disc { transform: scale(1.06); }
+.reel__play:focus-visible { outline: 2px solid var(--action); outline-offset: -2px; border-radius: var(--r-md); }
+@media (max-width: 1023px) { .reels { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 639px) { .reels { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } .reel__disc { width: 44px; height: 44px; } }
+
+/* ---------------------------------------------------------------- the one brand band: flat teal, no grain */
+.ground-brand.band-teal { --bg: #0D6872; --ink: #F2F1EE; --muted: color-mix(in oklab, #F2F1EE 84%, #0D6872); --action: #F2F1EE; --action-ink: #0D6872; --card: color-mix(in oklab, #0D6872 86%, #F2F1EE); background: var(--bg); color: var(--ink); }
+.ground-brand.band-teal :focus-visible { outline-color: #F2F1EE; }
+.offer { display: grid; gap: var(--s-3); align-content: start; padding-top: var(--s-5); border-top: 1px solid var(--line-strong); }
+.offer h3 { font: 500 var(--t-lead)/1.3 var(--font-text); letter-spacing: -0.01em; margin: 0; }
+.offer h3 small { font-size: var(--t-small); font-weight: 400; color: var(--muted); margin-left: var(--s-2); }
+.offer p { margin: 0; max-width: 40ch; }
+.offer .btn-row { margin-top: var(--s-3); }
+
+/* ---------------------------------------------------------------- a still photograph in a split, as tall as the words */
+.still { position: relative; margin: 0; border-radius: var(--r-lg); overflow: hidden; background: var(--surface); height: min(620px, var(--ly-fit, 620px)); }
+.still > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 40%); }
+@media (max-width: 1023px) { .still { width: 100%; height: min(56svh, 620px); margin-top: var(--s-7); } }
+@media (max-width: 639px) { .still { height: 42svh; margin-top: var(--s-6); } }
+
+/* the pictures' crops: faces and hands stay in the frame */
+.panel > .frame__img, .menu-card .frame__img { object-position: var(--pos, 50% 35%); }
+
+/* ---------------------------------------------------------------- the small print under a block */
+.fine { font-size: var(--t-small); color: var(--muted); max-width: 52ch; }
+.ground-brand .fine { color: var(--muted); }
+
+/* ---------------------------------------------------------------- ?proveri=1: every assumption gets a teal outline */
+html.proveri [data-assumed] { outline: 2px solid #4FC3C9 !important; outline-offset: 3px; border-radius: 4px; background: color-mix(in oklab, #4FC3C9 12%, transparent); }
+
+/* a drawing in a split's frame: the surface, the figure centred and whole */
+.still.still--drawing { display: grid; place-items: center; padding: var(--s-6); }
+.still--drawing .illus { height: 100%; width: auto; max-width: 100%; aspect-ratio: 480 / 760; }
+
+/* the program's weeks: one or two drawings on the surface over each week's words */
+.week { display: grid; gap: var(--s-3); align-content: start; }
+.week__art { display: flex; align-items: center; justify-content: center; gap: var(--s-3); height: clamp(220px, 34svh, 360px); padding: var(--s-5); border-radius: var(--r-lg); background: var(--surface); }
+.week__art .illus { flex: 1 1 0; min-width: 0; height: 100%; }
+.week__art .illus svg { width: 100%; height: 100%; }
+.week__art .arrow { flex: none; width: 20px; height: 20px; color: var(--muted); }
+.week h3 { font: 500 var(--t-lead)/1.3 var(--font-text); letter-spacing: -0.01em; margin: var(--s-2) 0 0; }
+.week h3 small { display: block; font-size: var(--t-small); font-weight: 500; color: var(--accent); letter-spacing: 0.01em; margin-bottom: 2px; }
+.week p { margin: 0; max-width: 40ch; }
+@media (min-width: 640px) { #faze .grid > .week { grid-column: auto / span 4; } }
+@media (min-width: 640px) and (max-width: 1023px) { .week__art { height: 24svh; padding: var(--s-4); } }
+@media (max-width: 639px) { .week__art { height: 200px; } }
+
+/* a smaller offer card beside the price rows */
+.plus { margin-top: var(--s-6); padding-top: var(--s-5); border-top: 2px solid var(--accent); display: grid; gap: var(--s-2); }
+.plus h3 { font: 500 var(--t-lead)/1.3 var(--font-text); margin: 0; }
+.plus p { margin: 0; }
+
+/* ---------------------------------------------------------------- fixes after the checks */
+/* the band one shade deeper than the presentation's #0D6872, so its body text reads 7:1 */
+.ground-brand.band-teal { --bg: #0A5A62; --muted: #F2F1EE; --card: color-mix(in oklab, #0A5A62 86%, #F2F1EE); }
+.ground-brand.band-teal .fine { color: #F2F1EE; }
+/* a linked card's photograph moves a little under the pointer */
+@media (hover: hover) and (pointer: fine) {
+  a.card .frame__img, a.menu-card .frame__img { transition: transform 600ms cubic-bezier(.22, 1, .36, 1); }
+  a.card:hover .frame__img, a.card:focus-visible .frame__img, a.menu-card:hover .frame__img { transform: scale(1.04); }
+}
+/* a tablet keeps a split side by side, so each section stays one screen */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .split-t > :is(.span-5, .span-6) { grid-column: auto / span 6; }
+  .split-t > .start-7 { grid-column-start: 7; }
+  .split-t .still, .split-t .develop { margin-top: 0; height: min(64svh, 620px); }
+  .reel { aspect-ratio: 4 / 5; }
+  .reel video { object-fit: contain; }
+  main [data-moment="pinned-chapters"]:not(.is-live) .mo-pc__visual > img { max-height: 15svh; }
+  main [data-moment="pinned-chapters"]:not(.is-live) .mo-pc__visual.mo-pc__visual--lit { height: 15svh; padding: 8px; }
+}
+/* a phone: the reels' heading over the button, the photographs shorter, the footer in two columns */
+@media (max-width: 639px) {
+  .section-head--row > div { flex: 1 1 100%; }
+  .still { height: 34svh; }
+  .footer .footer__col { grid-column: auto / span 6; }
+}
+/* a smaller photograph under a split's words */
+.still.still--sm { height: 360px; margin-top: 0; }
+@media (min-width: 640px) and (max-width: 1023px) { .split-t .still.still--sm { height: 30svh; } }
+@media (max-width: 639px) { .still.still--sm { height: 30svh; } }
+/* the questions a little tighter, so two columns of them stay one screen */
+#pitanja .faq > details { padding-block: var(--s-4); }
+#pitanja .faq > details:first-child { padding-top: 0; }
+@media (max-width: 1023px) { .faq summary { font-size: 17px; } }
+/* the steps at rest on a tablet: two by two, each picture over its words */
+@media (min-width: 640px) and (max-width: 1023px) {
+  main [data-moment="pinned-chapters"]:not(.is-live) .mo-pc__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: var(--s-6); }
+  main [data-moment="pinned-chapters"]:not(.is-live) .mo-pc__step { display: flex; flex-direction: column; gap: var(--s-2); border-top: 1px solid var(--line); padding: var(--s-4) 0 0; }
+  main [data-moment="pinned-chapters"]:not(.is-live) .mo-pc__step .mo-pc__visual { order: -1; margin: 0 0 var(--s-2); }
+  main [data-moment="pinned-chapters"]:not(.is-live) .mo-pc__visual > img { max-height: none; height: 140px; aspect-ratio: auto; }
+  main [data-moment="pinned-chapters"]:not(.is-live) .mo-pc__visual.mo-pc__visual--lit { height: 140px; padding: 8px; }
+}
+/* a phone: the steps at rest take exactly the section's two screens */
+@media (max-width: 639px) {
+  html main > [data-moment="pinned-chapters"][data-moment]:not(.is-live) { min-height: 200lvh; }
+  .still { height: 30svh; }
+}
+/* the pinned stage holds one screen from 640 to 1279 too, where the kit makes the section a flex column */
+@media (min-width: 640px) and (max-width: 1279px) { main [data-moment="pinned-chapters"][data-moment].is-live > .mo-pc__grid { flex: none; } }
+/* a linked card's photograph moves on hover (every pointer) */
+a.card:hover .frame__img, a.card:focus-visible .frame__img, a.menu-card:hover .frame__img { transform: scale(1.04); }
+a.card .frame__img, a.menu-card .frame__img { transition: transform 600ms cubic-bezier(.22, 1, .36, 1); }
+/* a blurred still under each photograph until it arrives */
+.still { background-size: cover; background-position: center; }
+/* the address over the hours, both on the column's left line */
+.visit__cols.visit__cols--stack { grid-template-columns: minmax(0, 1fr); }
+/* a tablet: the hero's picture leaves the screen's foot free, like every section under it */
+@media (min-width: 640px) and (max-width: 1023px) { .hero--split .hero__media { max-height: 50svh; } }
+@media (max-width: 639px) {
+  #teme .card.card--open { grid-template-columns: 124px minmax(0, 1fr); }
+  #teme .card > .panel { --p-h: 124px; height: 124px; }
+  #snimci .section-head--row { display: grid; gap: var(--s-4); justify-items: start; }
+  #programi .wrap > .span-6 > .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 12px; }
+  #programi .wrap > .span-6 > .grid > .offer { grid-column: auto; }
+  #programi .offer h3 small { display: block; margin: 2px 0 0; }
+  #programi .still { height: 16svh; }
+  #zakazi .form { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #zakazi .still { height: 16svh; }
+  .footer .footer__lede { display: none; }
+  .footer .closing__links .footer__col { grid-column: auto / span 4; font-size: 14px; }
+}
+@media (max-width: 639px) { #zakazi .form textarea { min-height: 64px; } #zakazi .still { height: 12svh; } #zakazi .btn-row { flex-wrap: nowrap; align-items: center; } }
+/* a phone, after the gate: the reels three across on one screen, the topics' pictures large enough to count,
+   the questions in reading size over their two screens */
+@media (max-width: 639px) {
+  .reels { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .reel__disc { width: 36px; height: 36px; left: 8px; bottom: 8px; }
+  .reel__disc svg { width: 13px; height: 13px; }
+  #teme .card.card--open { grid-template-columns: 136px minmax(0, 1fr); }
+  #teme .card > .panel { --p-h: 136px; height: 136px; width: 136px; }
+  #pitanja .faq summary { font-size: 20px; line-height: 1.35; }
+  #pitanja .faq details p { font-size: 18px; line-height: 1.65; }
+  #pitanja .faq > details { padding-block: var(--s-6); }
+}
+/* small print on a light ground in a darker grey, 7:1 */
+.fine { color: #3E4A50; }
+@media (max-width: 639px) {
+  .week__art { height: 300px; }
+  #program .develop { height: 18svh; }
+  #program .rows > li { padding-block: var(--s-3); }
+}
+@media (max-width: 639px) { #program .section-head { margin-bottom: var(--s-5); } #program .plus { margin-top: var(--s-4); } }
+/* the Instagram link under the reels, on the container's left line */
+.reels__more { margin-top: var(--s-6); }
+/* a tablet: the footer's link columns fill the row */
+@media (min-width: 640px) and (max-width: 1023px) { .footer .closing__links .footer__col { grid-column: auto / span 4; } }

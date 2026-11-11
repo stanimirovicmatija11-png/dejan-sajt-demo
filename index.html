@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="sr-Latn" data-type="service" data-radius="soft" data-buttons="solid" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kiropraktika ProTherapy: kiropraktičar Dejan Maćešić, Novi Sad</title>
+<meta name="description" content="Kiropraktičar Dejan Maćešić u Novom Sadu. Pogledaj snimke tretmana iz ordinacije i zakaži termin preko forme ili Instagrama.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sr_RS">
+<meta property="og:site_name" content="Kiropraktika ProTherapy">
+<meta property="og:title" content="Kiropraktika ProTherapy: kiropraktičar Dejan Maćešić, Novi Sad">
+<meta property="og:description" content="Snimci tretmana iz ordinacije u Novom Sadu i zakazivanje termina.">
+<meta property="og:image" content="share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f7f9fa">
+<meta name="robots" content="noindex">
+<!-- <link rel="canonical" href="https://[domen koji Dejan kupi]/"> -->
+<meta name="site-kind" content="other">
+<meta name="page-type" content="service">
+<link rel="preload" href="media/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="media/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
+<!-- start.mjs brand --page service --bg #F7F9FA --ink #131113 --accent #0D7480 --surface #F2F1EE --muted #54646C
+     --type instrument-serif --radius soft; the faces then set to the presentation's brand (Inter + Instrument Serif
+     Italic for one word), the inverse accent to the presentation's #4FC3C9 -->
+<style>
+:root {
+  --p-bg: #f7f9fa; --p-surface: #f2f1ee; --p-ink: #131113; --p-muted: #54646c;
+  --p-accent: #0d7480; --p-accent-ink: #f7f9fa; --p-action: #0d7480; --p-action-ink: #f7f9fa;
+  --p-inv-bg: #131113; --p-inv-surface: #201e20; --p-inv-ink: #f7f9fa; --p-inv-muted: #979799;
+  --p-inv-accent: #4fc3c9; --p-inv-accent-ink: #131113; --p-inv-action: #4fc3c9; --p-inv-action-ink: #131113;
+  --font-display: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-text: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Instrument Serif", "Times New Roman", serif;
+  --display-weight: 400;
+  --display-tracking: -0.025em;
+  --display-tracking-xl: -0.036em;
+  --ly-scale: 0.94;
+}
+</style>
+<link rel="stylesheet" href="site.css">
+<style>
+  #teme .panel { --p-h: 300px; }
+  @media (min-width: 640px) { #teme .grid > .card { grid-column: auto / span 4; } }
+  /* a tablet: the six topics on one screen, three by two */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    main > #teme.g2 { --h: 1; }
+    main > #teme.g2 > .wrap { display: flex; flex-direction: column; row-gap: var(--card-gap); }
+    #teme .card > .panel { --p-h: 120px; height: 120px; min-height: 0; flex: none; }
+    #teme .card > p { font-size: 15px; line-height: 22px; }
+  }
+  /* a phone: each topic a row, its picture small at the left */
+  @media (max-width: 639px) {
+    #teme .grid { row-gap: var(--s-4); }
+    #teme .card.card--open { display: grid; grid-template-columns: 136px minmax(0, 1fr); column-gap: var(--s-4); align-items: start; }
+    #teme .card > .panel { --p-h: 136px; grid-row: 1 / span 2; margin: 0; width: 136px; height: 136px; border-radius: var(--r-md); }
+    #teme .card > h3 { font-size: 16px; line-height: 22px; align-self: end; }
+    #teme .card > p { font-size: 14px; line-height: 20px; margin-top: 4px; min-height: 0; }
+  }
+  /* the booking form in one column beside its heading */
+  @media (min-width: 640px) and (max-width: 1023px) { #zakazi .form { grid-template-columns: minmax(0, 1fr); } }
+  #zakazi .form textarea { min-height: 80px; }
+  @media (max-width: 639px) { #zakazi .form textarea { min-height: 60px; } #zakazi .btn-row { flex-direction: row; flex-wrap: nowrap; align-items: center; gap: var(--s-4); } #zakazi .btn-row > .btn { width: auto; flex: none; } #zakazi .still { margin-top: var(--s-4); } }
+  .zakazi-col { display: grid; gap: var(--s-5); align-content: start; }
+  #zakazi .zakazi-col > .section-head { margin-bottom: 0; }
+  /* the two columns of questions end on one line */
+  #pitanja .grid { align-items: stretch; }
+</style>
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script src="assets/backgrounds/backgrounds.js"></script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="assets/moments/moments.js">
+<link rel="modulepreload" href="assets/moments/lib.js">
+<link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
+<link rel="modulepreload" href="assets/moments/pinned-chapters/moment.js">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Kiropraktika ProTherapy",
+  "description": "Kiropraktičar Dejan Maćešić u Novom Sadu.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Novi Sad", "addressCountry": "RS" },
+  "employee": { "@type": "Person", "name": "Dejan Maćešić", "jobTitle": "kiropraktičar" },
+  "sameAs": ["https://www.instagram.com/dejan.protherapy/"]
+}
+</script>
+</head>
+<body>
+<!-- type: service
+     deal: hero split (dealt film, dealt again: the footage is vertical 720x1280), nav nav-split, close close-type,
+     footer footer-columns, rhythm surface-pairs (#dejan, #zakazi) + one flat brand band (#programi), buttons solid,
+     mark arc, grounds none
+     moments: word-highlight (#prvi: the statement before the steps), pinned-chapters (#termin: how a visit goes);
+     photo-chapters dealt first and dealt again: it needs photographs the width of the page -->
+
+<header class="nav nav--split">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Na sadržaj</a>
+    <a class="nav__logo" href="#top"><span class="mark" data-mark="arc" aria-hidden="true"></span>ProTherapy</a>
+    <nav class="nav__links" aria-label="Glavni meni">
+      <div class="nav__item">
+        <a class="nav__link" href="#termin">Tretman <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav__menu">
+          <div class="wrap grid">
+            <a class="menu-card span-4" href="#teme">
+              <div class="panel"><img width="720" height="1280" class="frame__img" src="media/img/meni-teme.jpg" srcset="media/img/meni-teme-480.jpg 480w, media/img/meni-teme.jpg 720w" sizes="(max-width: 1023px) 46vw, 410px" alt="Pacijent leži na stolu dok Dejan radi na leđima" loading="lazy" style="--pos: 50% 45%"></div>
+              <span class="t-card">S čim ljudi dolaze</span>
+              <span class="t-small muted">Vrat, rame, lopatica, vilica, stomak</span>
+            </a>
+            <a class="menu-card span-4" href="#termin">
+              <div class="panel"><img width="720" height="1280" class="frame__img" src="media/img/meni-termin.jpg" srcset="media/img/meni-termin-480.jpg 480w, media/img/meni-termin.jpg 720w" sizes="(max-width: 1023px) 46vw, 410px" alt="Dejan okreće glavu pacijenta koji leži na stolu" loading="lazy" style="--pos: 50% 55%"></div>
+              <span class="t-card">Kako izgleda termin</span>
+              <span class="t-small muted">Razgovor, provera, tretman, vežbe</span>
+            </a>
+            <a class="menu-card span-4" href="#pitanja">
+              <div class="panel"><img width="720" height="1280" class="frame__img" src="media/img/meni-pitanja.jpg" srcset="media/img/meni-pitanja-480.jpg 480w, media/img/meni-pitanja.jpg 720w" sizes="(max-width: 1023px) 46vw, 410px" alt="Pacijentkinja sedi na stolu posle tretmana" loading="lazy" style="--pos: 50% 40%"></div>
+              <span class="t-card">Česta pitanja</span>
+              <span class="t-small muted">Da li boli, šta da obučem, uput</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item"><a class="nav__link" href="#snimci">Snimci</a></div>
+      <div class="nav__item"><a class="nav__link" href="#programi">Programi</a></div>
+      <div class="nav__item"><a class="nav__link" href="#dejan">O Dejanu</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary" href="#zakazi">Zakaži termin</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Meni">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero hero--split" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text grid hero__grid">
+      <div class="hero__text span-5">
+        <h1 id="hero-h">Kiropraktika u <em>Novom Sadu</em></h1>
+        <p class="hero__lead">Ja sam Dejan Maćešić, kiropraktičar u ordinaciji ProTherapy. Tretmane snimam uživo, pa možeš da ih pogledaš pre nego što dođeš.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="#zakazi">Zakaži termin<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+          <a class="btn btn--secondary" href="#snimci">Pogledaj snimke</a>
+        </div>
+      </div>
+      <div class="hero__media span-6 start-7" data-hero-film>
+        <video autoplay muted loop playsinline preload="auto" poster="media/img/hero-poster.jpg" style="--ly-pos: 50% 30%" aria-label="Snimak tretmana u ordinaciji ProTherapy, bez zvuka" data-source="client" data-subject="Dejan Maćešić tokom tretmana u ordinaciji">
+          <source src="media/hero-tretman-loop-600.mp4" type="video/mp4">
+        </video>
+        <button class="loop-pause" type="button" aria-pressed="false" aria-label="Pauziraj snimak">
+          <svg class="ic-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1"/><rect x="9.5" y="2.5" width="3" height="11" rx="1"/></svg>
+          <svg class="ic-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.5v11l9-5.5z"/></svg>
+        </button>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="section g2" id="teme" aria-labelledby="teme-h">
+    <div class="wrap">
+      <div class="group">
+        <div class="section-head">
+          <h2 id="teme-h">S čim ljudi <em>dolaze</em></h2>
+          <p>Ovo su teme koje se najčešće vide u mojim snimcima. Klikni na karticu i pogledaj ceo tretman.</p>
+        </div>
+        <div class="grid">
+          <a class="card card--open card--row span-4" href="#snimak-r3" data-reel-target="snimak-r3">
+            <div class="panel panel--top"><img width="720" height="1280" class="frame__img" src="media/img/teme-vrat.jpg" srcset="media/img/teme-vrat-480.jpg 480w, media/img/teme-vrat.jpg 720w" sizes="(max-width: 639px) 136px, (max-width: 1023px) 30vw, 410px" alt="Dejan stoji iza pacijenta i drži mu ramena" loading="lazy" style="--pos: 50% 38%" data-source="client" data-subject="tretman vrata"></div>
+            <h3>Vrat posle dana za računarom</h3>
+            <p>Glava se teže okreće na jednu stranu, a napetost se penje od ramena do potiljka.</p>
+          </a>
+          <a class="card card--open card--row span-4" href="#snimak-r1" data-reel-target="snimak-r1">
+            <div class="panel panel--top"><img width="720" height="1280" class="frame__img" src="media/img/teme-trapez.jpg" srcset="media/img/teme-trapez-480.jpg 480w, media/img/teme-trapez.jpg 720w" sizes="(max-width: 639px) 136px, (max-width: 1023px) 30vw, 410px" alt="Dejan radi na ramenu pacijenta u sedećem položaju" loading="lazy" style="--pos: 50% 30%" data-source="client" data-subject="tretman trapeza i ramena"></div>
+            <h3>Trapez i rame</h3>
+            <p>Trapez se zategne, rame se podigne ka uhu i ruka teže ide iznad glave.</p>
+          </a>
+          <a class="card card--open card--row span-4" href="#snimak-r0" data-reel-target="snimak-r0">
+            <div class="panel panel--top"><img width="720" height="1280" class="frame__img" src="media/img/teme-lopatica.jpg" srcset="media/img/teme-lopatica-480.jpg 480w, media/img/teme-lopatica.jpg 720w" sizes="(max-width: 639px) 136px, (max-width: 1023px) 30vw, 410px" alt="Pacijent podiže ruku dok Dejan proverava pokret ramena" loading="lazy" style="--pos: 50% 30%" data-source="client" data-subject="provera pokreta ramena"></div>
+            <h3>Bol ispod lopatice</h3>
+            <p>Tačka koja se stalno vraća, pa se kriviš još više dok pokušavaš da je istegneš.</p>
+          </a>
+        </div>
+      </div>
+      <div class="grid">
+        <a class="card card--open card--row span-4" href="#snimak-r4" data-reel-target="snimak-r4">
+          <div class="panel panel--top"><img width="720" height="1280" class="frame__img" src="media/img/teme-vilica.jpg" srcset="media/img/teme-vilica-480.jpg 480w, media/img/teme-vilica.jpg 720w" sizes="(max-width: 639px) 136px, (max-width: 1023px) 30vw, 410px" alt="Dejan u crnim rukavicama drži vilicu pacijentkinje" loading="lazy" style="--pos: 50% 34%" data-source="client" data-subject="tretman vilice"></div>
+          <h3>Napetost u vilici</h3>
+          <p>Stezanje zuba, škljocanje ili osećaj da se usta ne otvaraju do kraja.</p>
+        </a>
+        <a class="card card--open card--row span-4" href="#snimak-r2" data-reel-target="snimak-r2">
+          <div class="panel panel--top"><img width="720" height="1280" class="frame__img" src="media/img/teme-stomak.jpg" srcset="media/img/teme-stomak-480.jpg 480w, media/img/teme-stomak.jpg 720w" sizes="(max-width: 639px) 136px, (max-width: 1023px) 30vw, 410px" alt="Dejan u rukavicama radi na stomaku pacijenta koji leži" loading="lazy" style="--pos: 50% 60%" data-source="client" data-subject="tretman stomaka"></div>
+          <h3>Stomak i stres</h3>
+          <p>Kad se napetost skupi u stomaku: nadutost, stezanje i disanje samo u grudima.</p>
+        </a>
+        <a class="card card--open card--row span-4" href="#snimak-r5" data-reel-target="snimak-r5">
+          <div class="panel panel--top"><img width="720" height="1280" class="frame__img" src="media/img/teme-drzanje.jpg" srcset="media/img/teme-drzanje-480.jpg 480w, media/img/teme-drzanje.jpg 720w" sizes="(max-width: 639px) 136px, (max-width: 1023px) 30vw, 410px" alt="Pacijentkinja sedi uspravno, Dejan stoji iza nje" loading="lazy" style="--pos: 50% 40%" data-source="client" data-subject="držanje"></div>
+          <h3>Držanje</h3>
+          <p>Ramena krenu napred, a glava za njima. Obično se primeti na fotografiji pre nego u ogledalu.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section statement" id="prvi" data-moment="word-highlight" aria-labelledby="prvi-h">
+    <div class="wrap">
+      <h2 class="t-label" id="prvi-h">Prvi termin</h2>
+      <p class="mo-wh__text" data-assumed="tok termina">Mesto koje boli i mesto odakle napetost kreće često nisu isto. Zato prvi termin počinje razgovorom i proverom pokreta, pa tek onda <strong>tretmanom</strong>.</p>
+    </div>
+  </section>
+
+  <section class="section" id="termin" style="--h: 2" data-moment="pinned-chapters" aria-labelledby="termin-h">
+    <div class="wrap mo-pc__grid">
+      <div class="mo-pc__text">
+        <h2 id="termin-h">Kako izgleda <em>termin</em></h2>
+        <p class="t-lead">Isti tok koji vidiš na snimcima. Redosled se prilagođava onome s čim dolaziš.</p>
+        <ol class="mo-pc__steps" data-assumed="tok termina">
+          <li class="mo-pc__step">
+            <h3>Pričamo šta te muči</h3>
+            <p>Gde boli, od kada i čime se baviš ceo dan. Ako imaš nalaz ili snimak, ponesi ga.</p>
+            <figure class="mo-pc__visual"><img src="media/img/termin-razgovor.jpg" srcset="media/img/termin-razgovor-480.jpg 480w, media/img/termin-razgovor.jpg 720w" sizes="(max-width: 639px) 92vw, (max-width: 1023px) 46vw, 628px" alt="Dejan stoji iza pacijenta koji sedi i razgovara sa njim" width="720" height="1280" loading="lazy" style="object-position: 50% 30%"></figure>
+          </li>
+          <li class="mo-pc__step">
+            <h3>Proveravam kako se pomeraš</h3>
+            <p>Okretanje glave, podizanje ruku, sedenje i disanje. Upoređujemo levu i desnu stranu.</p>
+            <figure class="mo-pc__visual"><img src="media/img/termin-provera.jpg" srcset="media/img/termin-provera-480.jpg 480w, media/img/termin-provera.jpg 720w" sizes="(max-width: 639px) 92vw, (max-width: 1023px) 46vw, 628px" alt="Dejan drži ruke na vratu i ramenima pacijenta i proverava pokret" width="720" height="1280" loading="lazy" style="object-position: 50% 32%"></figure>
+          </li>
+          <li class="mo-pc__step">
+            <h3>Radimo tretman</h3>
+            <p>Na stolu ili u sedećem položaju. Usput objašnjavam šta radim i zašto, a ti pitaš šta god te zanima.</p>
+            <figure class="mo-pc__visual"><img src="media/img/termin-tretman.jpg" srcset="media/img/termin-tretman-480.jpg 480w, media/img/termin-tretman.jpg 720w" sizes="(max-width: 639px) 92vw, (max-width: 1023px) 46vw, 628px" alt="Pacijent leži na stolu za tretman, Dejan radi na njegovim leđima" width="720" height="1280" loading="lazy" style="object-position: 50% 45%"></figure>
+          </li>
+          <li class="mo-pc__step">
+            <h3>Dobijaš vežbe za kod kuće</h3>
+            <p>Jednu ili dve stvari koje radiš sam, na primer disanje stomakom. Pokazujem ih dok si još u ordinaciji.</p>
+            <figure class="mo-pc__visual mo-pc__visual--lit">
+              <div class="illus" role="img" aria-label="Linijski crtež: disanje stomakom, stomak se širi pri udahu"><!--svg:07-disanje-stomakom-udah--><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="120 300 480 760"> <path class="draw" d="M332,470 L332,471 L332,472 L332,474 L332,476 L332,478 L332,480 L333,482 L333,484 L333,486 L333,489 L333,491 L334,494 L334,496 L334,499 L334,501 L334,504 L333,506 L333,508 L333,511 L333,513 L332,515 L332,517 L331,518 L330,520 L329,522 L328,523 L327,524 L326,525 L324,526 L323,528 L322,529 L320,530 L318,531 L317,532 L315,532 L313,533 L311,534 L309,535 L308,536 L306,536 L304,537 L302,538 L300,538 L298,539 L296,540 L294,540 L292,541 L290,542 L288,543 L286,543 L284,544 L282,545 L280,545 L278,546 L275,546 L273,547 L271,548 L268,548 L266,548 L264,549 L262,550 L259,550 L257,550 L255,551 L252,552 L250,552 L248,553 L246,553 L244,554 L242,555 L240,555 L238,556 L236,557 L234,558 L232,558 L231,559 L229,560 L227,560 L225,561 L224,562 L222,563 L220,563 L218,564 L217,565 L215,566 L214,567 L212,568 L210,568 L209,570 L208,571 L206,572 L205,573 L204,574 L202,575 L201,577 L200,578 L199,580 L198,581 L197,582 L196,584 L195,586 L194,587 L193,589 L192,591 L191,593 L190,594 L190,596 L189,598 L188,600 L188,602 L187,604 L186,606 L186,608 L186,611 L185,613 L185,615 L184,618 L184,620 L184,622 L184,625 L184,628 L184,630 L184,633 L184,636 L185,638 L185,641 L186,644 L186,647 L186,650 L187,653 L188,656 L188,659 L189,662 L190,666 L190,669 L191,672 L192,676 L192,679 L193,682 L194,686 L194,689 L195,693 L196,696 L196,700 L196,704 L197,708 L197,711 L198,715 L198,719 L199,723 L199,727 L200,732 L200,736 L200,740 L201,744 L201,748 L202,753 L202,757 L202,761 L203,766 L203,770 L204,774 L204,779 L204,783 L205,787 L205,792 L206,796 L206,800 L206,804 L207,808 L207,812 L208,817 L208,821 L208,825 L209,829 L209,833 L210,837 L210,841 L211,845 L211,849 L211,854 L212,858 L212,862 L213,866 L213,870 L214,874 L214,878 L214,883 L215,887 L215,891 L216,896 L216,900 L216,904 L217,909 L217,914 L218,919 L218,924 L219,929 L219,935 L220,940 L220,945 L221,951 L221,956 L222,961 L222,966 L222,972 L223,976 L223,981 L224,986 L224,990 L225,994 L225,998 L225,1001 L226,1005 L226,1008 L226,1010" stroke-width="4"/> <path class="draw" d="M388,470 L388,471 L388,472 L388,474 L388,476 L388,478 L388,480 L387,482 L387,484 L387,486 L387,489 L387,491 L386,494 L386,496 L386,499 L386,501 L386,504 L387,506 L387,508 L387,511 L387,513 L388,515 L388,517 L389,518 L390,520 L391,522 L392,523 L393,524 L394,525 L396,526 L397,528 L398,529 L400,530 L402,531 L403,532 L405,532 L407,533 L409,534 L411,535 L412,536 L414,536 L416,537 L418,538 L420,538 L422,539 L424,540 L426,540 L428,541 L430,542 L432,543 L434,543 L436,544 L438,545 L440,545 L442,546 L445,546 L447,547 L449,548 L452,548 L454,548 L456,549 L458,550 L461,550 L463,550 L465,551 L468,552 L470,552 L472,553 L474,553 L476,554 L478,555 L480,555 L482,556 L484,557 L486,558 L488,558 L489,559 L491,560 L493,560 L495,561 L496,562 L498,563 L500,563 L502,564 L503,565 L505,566 L506,567 L508,568 L510,568 L511,570 L512,571 L514,572 L515,573 L516,574 L518,575 L519,577 L520,578 L521,580 L522,581 L523,582 L524,584 L525,586 L526,587 L527,589 L528,591 L529,593 L530,594 L530,596 L531,598 L532,600 L532,602 L533,604 L534,606 L534,608 L534,611 L535,613 L535,615 L536,618 L536,620 L536,622 L536,625 L536,628 L536,630 L536,633 L536,636 L535,638 L535,641 L534,644 L534,647 L534,650 L533,653 L532,656 L532,659 L531,662 L530,666 L530,669 L529,672 L528,676 L528,679 L527,682 L526,686 L526,689 L525,693 L524,696 L524,700 L524,704 L523,708 L523,711 L522,715 L522,719 L521,723 L521,727 L520,732 L520,736 L520,740 L519,744 L519,748 L518,753 L518,757 L518,761 L517,766 L517,770 L516,774 L516,779 L516,783 L515,787 L515,792 L514,796 L514,800 L514,804 L513,808 L513,812 L512,817 L512,821 L512,825 L511,829 L511,833 L510,837 L510,841 L509,845 L509,849 L509,854 L508,858 L508,862 L507,866 L507,870 L506,874 L506,878 L506,883 L505,887 L505,891 L504,896 L504,900 L504,904 L503,909 L503,914 L502,919 L502,924 L501,929 L501,935 L500,940 L500,945 L499,951 L499,956 L498,961 L498,966 L498,972 L497,976 L497,981 L496,986 L496,990 L495,994 L495,998 L495,1001 L494,1005 L494,1008 L494,1010" stroke-width="4"/> <path class="draw" d="M422,400 L422,401 L422,402 L422,402 L421,403 L421,404 L421,406 L421,407 L421,408 L420,410 L420,411 L420,412 L420,414 L419,415 L419,417 L419,418 L418,420 L418,421 L418,423 L417,424 L417,426 L416,427 L416,428 L415,430 L415,431 L414,432 L414,433 L413,434 L412,435 L412,436 L411,437 L410,438 L410,440 L409,441 L408,442 L407,443 L406,444 L406,445 L405,446 L404,447 L403,448 L402,448 L401,449 L400,450 L399,451 L398,452 L397,453 L396,454 L395,454 L394,455 L393,456 L392,456 L391,457 L390,458 L389,458 L388,459 L387,460 L386,460 L384,461 L383,461 L382,462 L381,462 L380,462 L378,463 L377,463 L376,464 L375,464 L374,464 L372,465 L371,465 L370,465 L369,465 L368,466 L366,466 L365,466 L364,466 L363,466 L361,466 L360,466 L359,466 L358,466 L356,466 L355,466 L354,466 L352,465 L351,465 L350,465 L349,465 L348,465 L346,464 L345,464 L344,464 L343,463 L342,463 L340,463 L339,462 L338,462 L337,461 L336,461 L335,460 L334,460 L332,459 L331,458 L330,458 L329,457 L328,456 L327,456 L326,455 L325,454 L324,454 L323,453 L322,452 L321,451 L320,450 L319,449 L318,448 L317,448 L316,447 L315,446 L314,445 L314,444 L313,443 L312,442 L311,441 L310,440 L310,439 L309,438 L308,436 L308,435 L307,434 L306,433 L306,432 L305,431 L305,429 L304,428 L304,427 L303,426 L302,424 L302,423 L302,422 L301,421 L301,420 L300,418 L300,417 L300,416 L300,414 L299,413 L299,412 L299,411 L299,409 L298,408 L298,407 L298,405 L298,404 L298,403 L298,401 L298,400 L298,399 L298,397 L298,396 L298,395 L298,393 L298,392 L299,391 L299,389 L299,388 L299,387 L300,386 L300,384 L300,383 L300,382 L301,380 L301,379 L302,378 L302,377 L302,376 L303,374 L304,373 L304,372 L305,371 L305,369 L306,368 L306,367 L307,366 L308,365 L308,364 L309,362 L310,361 L310,360 L311,359 L312,358 L313,357 L314,356 L314,355 L315,354 L316,353 L317,352 L318,352 L319,351 L320,350 L321,349 L322,348 L323,347 L324,346 L325,346 L326,345 L327,344 L328,344 L329,343 L330,342 L331,342 L332,341 L334,340 L335,340 L336,339 L337,339 L338,338 L339,338 L340,337 L342,337 L343,337 L344,336 L345,336 L346,336 L348,335 L349,335 L350,335 L351,335 L352,335 L354,334 L355,334 L356,334 L358,334 L359,334 L360,334 L361,334 L363,334 L364,334 L365,334 L366,334 L368,334 L369,335 L370,335 L371,335 L372,335 L374,336 L375,336 L376,336 L377,337 L378,337 L380,338 L381,338 L382,338 L383,339 L384,339 L386,340 L387,340 L388,341 L389,342 L390,342 L391,343 L392,344 L393,344 L394,345 L395,346 L396,346 L397,347 L398,348 L399,349 L400,350 L401,351 L402,352 L403,352 L404,353 L405,354 L406,355 L406,356 L407,357 L408,358 L409,359 L410,360 L410,362 L411,363 L412,364 L412,365 L413,366 L414,367 L414,368 L415,369 L415,370 L416,372 L416,373 L417,374 L417,376 L418,377 L418,379 L418,380 L419,382 L419,383 L419,385 L420,386 L420,388 L420,389 L420,390 L421,392 L421,393 L421,394 L421,396 L421,397 L422,398 L422,398 L422,399 L422,400 L422,401 L422,401 L422,401 L422,401 L423,402 L423,401 L423,401 L423,401 L423,401 L423,401 L423,400 L423,400 L423,400 L423,399 L423,399 L423,399 L423,399 L423,399 L423,398 L422,399 L422,399 L422,399 L422,399 L422,400" stroke-width="4"/> <path class="draw" d="M345,585 L344,582 L343,580 L342,577 L340,576 L338,574 L337,574 L335,573 L333,573 L331,573 L329,573 L327,574 L325,574 L323,575 L320,576 L318,578 L316,579 L314,580 L312,582 L310,583 L308,585 L306,586 L304,588 L302,589 L300,590 L298,591 L296,592 L295,594 L293,595 L291,597 L289,598 L287,600 L286,602 L284,604 L282,605 L280,607 L278,609 L277,612 L275,614 L274,616 L272,618 L270,621 L269,623 L268,626 L266,628 L265,631 L264,634 L263,637 L262,640 L261,643 L260,647 L260,650 L259,654 L258,658 L258,662 L257,666 L256,671 L256,675 L256,680 L255,684 L255,689 L255,694 L255,698 L255,702 L255,707 L255,711 L255,715 L255,719 L256,723 L256,726 L257,729 L257,732 L258,735 L259,737 L260,740 L261,742 L262,744 L264,746 L265,747 L267,749 L268,750 L270,751 L272,752 L274,753 L276,754 L278,755 L280,756 L282,757 L284,757 L286,758 L288,758 L290,759 L292,759 L294,759 L296,760 L298,760 L300,760 L302,760 L304,761 L306,761 L308,762 L310,762 L312,762 L314,763 L316,763 L319,764 L321,764 L323,764 L325,764 L327,764 L329,764 L331,763 L333,762 L335,761 L337,760 L338,758 L340,756 L342,754 L343,752 L344,748 L345,745 L346,741 L347,736 L348,731 L348,725 L349,718 L349,711 L350,704 L350,696 L350,688 L350,680 L351,672 L351,664 L351,656 L350,647 L350,639 L350,632 L350,624 L349,617 L349,610 L348,604 L348,598 L347,593 L346,589 L345,585" stroke-opacity="0" stroke-width="2"/> <path class="draw" d="M375,585 L376,582 L377,580 L378,577 L380,576 L382,574 L383,574 L385,573 L387,573 L389,573 L391,573 L393,574 L395,574 L397,575 L400,576 L402,578 L404,579 L406,580 L408,582 L410,583 L412,585 L414,586 L416,588 L418,589 L420,590 L422,591 L424,592 L425,594 L427,595 L429,597 L431,598 L433,600 L434,602 L436,604 L438,605 L440,607 L442,609 L443,612 L445,614 L446,616 L448,618 L450,621 L451,623 L452,626 L454,628 L455,631 L456,634 L457,637 L458,640 L459,643 L460,647 L460,650 L461,654 L462,658 L462,662 L463,666 L464,671 L464,675 L464,680 L465,684 L465,689 L465,694 L465,698 L465,702 L465,707 L465,711 L465,715 L465,719 L464,723 L464,726 L463,729 L463,732 L462,735 L461,737 L460,740 L459,742 L458,744 L456,746 L455,747 L453,749 L452,750 L450,751 L448,752 L446,753 L444,754 L442,755 L440,756 L438,757 L436,757 L434,758 L432,758 L430,759 L428,759 L426,759 L424,760 L422,760 L420,760 L418,760 L416,761 L414,761 L412,762 L410,762 L408,762 L406,763 L404,763 L401,764 L399,764 L397,764 L395,764 L393,764 L391,764 L389,763 L387,762 L385,761 L383,760 L382,758 L380,756 L378,754 L377,752 L376,748 L375,745 L374,741 L373,736 L372,731 L372,725 L371,718 L371,711 L370,704 L370,696 L370,688 L370,680 L369,672 L369,664 L369,656 L370,647 L370,639 L370,632 L370,624 L371,617 L371,610 L372,604 L372,598 L373,593 L374,589 L375,585" stroke-opacity="0" stroke-width="2"/> <path class="draw em" d="M232,836 L234,835 L235,834 L237,832 L240,830 L242,828 L244,827 L247,824 L250,822 L253,820 L256,818 L259,815 L262,813 L266,810 L269,808 L272,806 L275,803 L279,801 L282,799 L285,797 L288,795 L291,793 L294,791 L297,789 L300,788 L303,787 L305,786 L308,784 L310,783 L313,782 L316,782 L318,781 L321,780 L323,779 L326,778 L328,778 L330,777 L333,777 L335,776 L338,776 L340,775 L343,775 L345,775 L348,774 L350,774 L353,774 L355,774 L358,774 L360,774 L362,774 L365,774 L367,774 L370,774 L372,774 L375,775 L377,775 L380,775 L382,776 L385,776 L387,777 L390,777 L392,778 L394,778 L397,779 L399,780 L402,781 L404,782 L407,782 L410,783 L412,784 L415,786 L417,787 L420,788 L423,789 L426,791 L429,793 L432,795 L435,797 L438,799 L441,801 L445,803 L448,806 L451,808 L454,810 L458,813 L461,815 L464,818 L467,820 L470,822 L473,824 L476,827 L478,828 L480,830 L483,832 L485,834 L486,835 L488,836" stroke-width="4"/> <path class="glow" d="M470,900 L470,906 L469,912 L467,918 L464,924 L461,930 L458,936 L453,941 L448,946 L443,951 L437,956 L430,960 L424,964 L416,967 L409,970 L401,972 L392,975 L384,976 L375,977 L367,978 L358,978 L349,978 L340,977 L332,975 L324,974 L315,971 L308,969 L300,965 L293,962 L286,958 L280,954 L274,949 L269,944 L264,939 L260,933 L257,927 L254,921 L252,915 L251,909 L250,903 L250,897 L251,891 L252,885 L254,879 L257,873 L260,867 L264,861 L269,856 L274,851 L280,846 L286,842 L293,838 L300,835 L308,831 L315,829 L324,826 L332,825 L340,823 L349,822 L358,822 L367,822 L375,823 L384,824 L392,825 L401,828 L409,830 L416,833 L424,836 L430,840 L437,844 L443,849 L448,854 L453,859 L458,864 L461,870 L464,876 L467,882 L469,888 L470,894 L470,900 Z" fill-opacity="0"/> <path class="draw" d="M470,900 L470,906 L469,912 L467,918 L464,924 L461,930 L458,936 L453,941 L448,946 L443,951 L437,956 L430,960 L424,964 L416,967 L409,970 L401,972 L392,975 L384,976 L375,977 L367,978 L358,978 L349,978 L340,977 L332,975 L324,974 L315,971 L308,969 L300,965 L293,962 L286,958 L280,954 L274,949 L269,944 L264,939 L260,933 L257,927 L254,921 L252,915 L251,909 L250,903 L250,897 L251,891 L252,885 L254,879 L257,873 L260,867 L264,861 L269,856 L274,851 L280,846 L286,842 L293,838 L300,835 L308,831 L315,829 L324,826 L332,825 L340,823 L349,822 L358,822 L367,822 L375,823 L384,824 L392,825 L401,828 L409,830 L416,833 L424,836 L430,840 L437,844 L443,849 L448,854 L453,859 L458,864 L461,870 L464,876 L467,882 L469,888 L470,894 L470,900" stroke-width="3"/> <path class="draw" d="M360,560 L360,564 L360,568 L360,573 L360,578 L360,584 L360,590 L360,597 L360,604 L360,612 L360,620 L360,627 L360,635 L360,643 L360,650 L360,658 L360,666 L360,673 L360,680 L360,686 L360,692 L360,697 L360,702 L360,706 L360,710" stroke-opacity="1" stroke-width="3"/> <path class="draw" d="M346,696 L360,712 L374,696" stroke-opacity="1" stroke-width="3"/> </svg><!--/svg--></div>
+            </figure>
+          </li>
+        </ol>
+      </div>
+      <div class="mo-pc__visuals frame"></div>
+    </div>
+  </section>
+
+  <section class="section" id="snimci" aria-labelledby="snimci-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="snimci-h">Snimci iz <em>ordinacije</em></h2>
+        <p>Isti sto i isti zid sa vodopadom koje ćeš videti kad dođeš. Pusti bilo koji snimak, ide sa zvukom.</p>
+      </div>
+      <ul class="reels">
+        <li class="reel" id="snimak-r0"><button class="reel__play" type="button" data-reel="media/reels/R0-bol-ispod-lopatice-demo-v2.mp4" aria-label="Pusti snimak: bol ispod lopatice"><img src="media/reels/R0-bol-ispod-lopatice-demo-v2-poster.jpg" srcset="media/reels/R0-bol-ispod-lopatice-demo-v2-poster-220.jpg 220w, media/reels/R0-bol-ispod-lopatice-demo-v2-poster.jpg 360w" sizes="(max-width: 639px) 31vw, (max-width: 1023px) 30vw, 200px" alt="" width="360" height="640" loading="lazy"><span class="reel__disc" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg></span></button></li>
+        <li class="reel" id="snimak-r1"><button class="reel__play" type="button" data-reel="media/reels/R1-trapez-i-rame.mp4" aria-label="Pusti snimak: trapez i rame"><img src="media/reels/R1-trapez-i-rame-poster.jpg" srcset="media/reels/R1-trapez-i-rame-poster-220.jpg 220w, media/reels/R1-trapez-i-rame-poster.jpg 360w" sizes="(max-width: 639px) 31vw, (max-width: 1023px) 30vw, 200px" alt="" width="360" height="640" loading="lazy"><span class="reel__disc" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg></span></button></li>
+        <li class="reel" id="snimak-r2"><button class="reel__play" type="button" data-reel="media/reels/R2-stomak-i-stres.mp4" aria-label="Pusti snimak: stomak i stres"><img src="media/reels/R2-stomak-i-stres-poster.jpg" srcset="media/reels/R2-stomak-i-stres-poster-220.jpg 220w, media/reels/R2-stomak-i-stres-poster.jpg 360w" sizes="(max-width: 639px) 31vw, (max-width: 1023px) 30vw, 200px" alt="" width="360" height="640" loading="lazy"><span class="reel__disc" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg></span></button></li>
+        <li class="reel" id="snimak-r3"><button class="reel__play" type="button" data-reel="media/reels/R3-vrat-delic.mp4" aria-label="Pusti snimak: vrat"><img src="media/reels/R3-vrat-delic-poster.jpg" srcset="media/reels/R3-vrat-delic-poster-220.jpg 220w, media/reels/R3-vrat-delic-poster.jpg 360w" sizes="(max-width: 639px) 31vw, (max-width: 1023px) 30vw, 200px" alt="" width="360" height="640" loading="lazy"><span class="reel__disc" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg></span></button></li>
+        <li class="reel" id="snimak-r4"><button class="reel__play" type="button" data-reel="media/reels/R4-vilica.mp4" aria-label="Pusti snimak: vilica"><img src="media/reels/R4-vilica-poster.jpg" srcset="media/reels/R4-vilica-poster-220.jpg 220w, media/reels/R4-vilica-poster.jpg 360w" sizes="(max-width: 639px) 31vw, (max-width: 1023px) 30vw, 200px" alt="" width="360" height="640" loading="lazy"><span class="reel__disc" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg></span></button></li>
+        <li class="reel" id="snimak-r5"><button class="reel__play" type="button" data-reel="media/reels/R5-vrat-i-ledja.mp4" aria-label="Pusti snimak: vrat i leđa"><img src="media/reels/R5-vrat-i-ledja-poster.jpg" srcset="media/reels/R5-vrat-i-ledja-poster-220.jpg 220w, media/reels/R5-vrat-i-ledja-poster.jpg 360w" sizes="(max-width: 639px) 31vw, (max-width: 1023px) 30vw, 200px" alt="" width="360" height="640" loading="lazy"><span class="reel__disc" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg></span></button></li>
+      </ul>
+      <div class="btn-row reels__more"><a class="btn btn--secondary" href="https://www.instagram.com/dejan.protherapy/" target="_blank" rel="noopener">Prati na Instagramu</a></div>
+    </div>
+  </section>
+
+  <section class="section ground-brand band-teal" id="programi" aria-labelledby="programi-h">
+    <div class="wrap grid grid--top split-t">
+      <div class="span-6 stack-6">
+        <div class="section-head">
+          <h2 id="programi-h">Programi za <em>kod kuće</em></h2>
+          <p>Za dane između termina, ili kad trenutno ne možeš da dođeš.</p>
+        </div>
+        <div class="grid">
+          <div class="offer span-6">
+            <h3>Vodič LEĐA <small>besplatno</small></h3>
+            <p data-assumed="sadržaj vodiča">Pet navika za ljude koji sede, u PDF-u i tri kratka videa. Stiže na email.</p>
+            <div class="btn-row"><a class="btn btn--secondary" href="vodic-ledja.html">Preuzmi vodič</a></div>
+          </div>
+          <div class="offer span-6">
+            <h3>Uspravno: 21 dan <small>uskoro</small></h3>
+            <p data-assumed="sadržaj programa">Tri nedelje, tri faze: disanje, otvaranje grudnog koša i jačanje leđa.</p>
+            <div class="btn-row"><a class="link" href="uspravno.html">Upiši se na listu</a></div>
+          </div>
+        </div>
+        <p class="fine">Programi su opšti i edukativni i ne zamenjuju pregled.</p>
+      </div>
+      <figure style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAQTGF2YzYwLjMxLjEwMgD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwB0d2pw7uxGeRV54bdyGDkAjOKo2+jGSEu8+0nt6VDdiSOUIkhKqoGacUr2YN2SNRgLZRCmSGPJNYtzG0c7qsrYzmiio6l9D//Z)" class="still span-6 start-7"><img width="720" height="1280" src="media/img/programi.jpg" srcset="media/img/programi-480.jpg 480w, media/img/programi.jpg 720w" sizes="(max-width: 639px) 92vw, (max-width: 1023px) 46vw, 628px" alt="Dejan stoji iza nasmejanog pacijenta i drži mu ramena" loading="lazy" style="--pos: 50% 30%" data-source="client" data-subject="Dejan sa pacijentom"></figure>
+    </div>
+  </section>
+
+  <section class="section ground-surface" id="dejan" aria-labelledby="dejan-h">
+    <div class="wrap grid grid--top split-t">
+      <div class="span-6">
+        <div class="section-head">
+          <h2 id="dejan-h">Dejan Maćešić, <em>kiropraktičar</em></h2>
+          <p>Radim u ordinaciji ProTherapy u Novom Sadu. Tretmane snimam za Instagram, da znaš šta te čeka pre nego što uđeš.</p>
+          <p>Na terminu objašnjavam šta radim i zašto, običnim rečima. Ako ti nešto nije jasno, pitaj: zato i snimam (pa se na snimcima čuje i kad se smejemo).</p>
+        </div>
+      </div>
+      <figure style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAQTGF2YzYwLjMxLjEwMgD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDMtLkrclzLn/Zq60+85JApLSz06Js3LsZH9P4aW6t0SYrExZAODUO3ctX7GQJ2MgYjJatmyAktwxooqKiLgz//2Q==)" class="still span-6 start-7"><img width="720" height="1280" src="media/img/dejan-diplome.jpg" srcset="media/img/dejan-diplome-480.jpg 480w, media/img/dejan-diplome.jpg 720w" sizes="(max-width: 639px) 92vw, (max-width: 1023px) 46vw, 628px" alt="Dejan radi na nozi pacijentkinje, iza njega diplome na drvenom zidu" loading="lazy" style="--pos: 40% 18%" data-source="client" data-subject="Dejan Maćešić u ordinaciji"></figure>
+    </div>
+  </section>
+
+  <section class="section ground-surface" id="zakazi" aria-labelledby="zakazi-h">
+    <div class="wrap grid grid--top split-t">
+      <div class="span-6 zakazi-col">
+        <div class="section-head">
+          <h2 id="zakazi-h">Termin i <em>cena</em></h2>
+          <p data-assumed="cena">Cenu prvog termina i slobodne termine dobijaš u poruci.</p>
+        </div>
+        <form class="form" action="mailto:termin@protherapy.example" method="post" enctype="text/plain"
+        data-endpoint="https://forms.protherapy.example/termin"
+        data-sent="Tvoj zahtev za termin je stigao. Javljam ti se sa slobodnim terminima i cenom."
+        data-failed="Poruka nije poslata. Piši mi na Instagramu ili pokušaj ponovo za par minuta."
+        data-sending="Šaljem…" data-fix="Popravi označena polja ({n})." novalidate>
+        <div class="field"><label for="f-ime">Ime i prezime</label>
+          <input id="f-ime" name="ime" type="text" autocomplete="name" required aria-describedby="f-ime-err">
+          <p class="field__error" id="f-ime-err" hidden>Napiši ime, da znam kome se javljam.</p></div>
+        <div class="field"><label for="f-tel">Telefon</label>
+          <input id="f-tel" name="telefon" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="f-tel-err">
+          <p class="field__error" id="f-tel-err" hidden>Napiši broj telefona, sa pozivnim brojem.</p></div>
+        <div class="field field--full"><label for="f-tema">Šta te muči</label>
+          <textarea id="f-tema" name="tema" rows="3" required placeholder="Na primer: vrat i rame, posle posla" aria-describedby="f-tema-err"></textarea>
+          <p class="field__error" id="f-tema-err" hidden>Napiši bar par reči, na primer „vrat posle posla”.</p></div>
+        <div class="field field--full"><label for="f-kada">Kada ti odgovara</label>
+          <input id="f-kada" name="kada" type="text" autocomplete="off" placeholder="Na primer: radnim danom posle 17h"></div>
+        <div class="btn-row"><button class="btn btn--primary" type="submit">Zakaži termin</button><a class="link" href="https://ig.me/m/dejan.protherapy" target="_blank" rel="noopener">Ili na Instagramu</a></div>
+        <p class="form__status" role="status" data-form-status></p>
+      </form>
+      </div>
+      <figure style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAQTGF2YzYwLjMxLjEwMgD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwBIrto48ryR0rTa727d0gUkA4rAmeKzhQM3LGrEsbTlXALDaOQacZJSsDTUblTxdEkN4iRrtGM1saHaRzaXE75J+tFFSxn/2Q==)" class="still span-6 start-7"><img width="720" height="1280" src="media/img/zakazi.jpg" srcset="media/img/zakazi-480.jpg 480w, media/img/zakazi.jpg 720w" sizes="(max-width: 639px) 92vw, (max-width: 1023px) 46vw, 628px" alt="Pacijentkinja se smeje posle tretmana, sa rukama na obrazima" loading="lazy" style="--pos: 50% 30%" data-source="client" data-subject="pacijentkinja posle tretmana"></figure>
+    </div>
+  </section>
+
+
+  <section class="section" id="pitanja" style="--hm: 2" aria-labelledby="pitanja-h">
+    <div class="wrap">
+      <div class="section-head"><h2 id="pitanja-h">Česta <em>pitanja</em></h2><p>Kratki odgovori na ono što ljudi najčešće pitaju pre prvog termina.</p></div>
+      <div class="grid grid--top split-t">
+        <div class="faq span-6">
+          <details open><summary>Da li tretman boli?</summary><p data-assumed="odgovor">Na zategnutim mestima može da bude neprijatno, ali ne bi trebalo da boli. Ako nešto smeta, kažeš i stajemo.</p></details>
+          <details open><summary>Koliko traje termin?</summary><p data-assumed="trajanje">Trajanje ti kažem kad zakazujemo, jer zavisi od toga s čim dolaziš.</p></details>
+          <details open><summary>Šta da obučem?</summary><p>Nešto udobno u čemu možeš da se sagneš i podigneš ruke: trenerku, helanke, majicu.</p></details>
+          <details open><summary>Da li mi treba uput?</summary><p data-assumed="uput">Ne treba. Ako imaš nalaze ili snimke, ponesi ih.</p></details>
+        </div>
+        <div class="faq span-6">
+          <details open><summary>Koliko termina obično treba?</summary><p>To se vidi posle prvog termina. Nekome je dovoljan jedan, nekome treba nekoliko, i to ti kažem pre nego što se dogovorimo za sledeći.</p></details>
+          <details open><summary>Mogu li da dođem posle povrede?</summary><p>Posle pada, udarca ili saobraćajne nesreće prvo idi kod lekara. Kad dobiješ nalaz, javi se sa njim.</p></details>
+          <details open><summary>Trudna sam ili imam hroničnu bolest. Mogu li da dođem?</summary><p>Napiši to u formi, pa se pre termina dogovaramo da li i kako možemo da radimo.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="visit" aria-labelledby="visit-h">
+    <div class="wrap grid grid--top split-t">
+      <div class="span-6">
+        <div class="section-head">
+          <h2 id="visit-h">Gde smo i kada <em>radimo</em></h2>
+        </div>
+        <div class="visit">
+          <div class="visit__cols visit__cols--stack">
+            <div class="visit__col stack-4">
+              <p class="t-label">Ordinacija</p>
+              <address class="visit__address">Kiropraktika ProTherapy<br>Novi Sad</address>
+            </div>
+            <div class="visit__col">
+              <p class="t-label">Radno vreme</p>
+              <dl class="hours" data-tz="Europe/Belgrade" data-assumed="radno vreme"><dt data-days="mon-fri">Ponedeljak–petak</dt><dd>9–20</dd><dt data-days="sat">Subota</dt><dd>9–14</dd><dt data-days="sun">Nedelja</dt><dd>ne radimo</dd></dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figure style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAQTGF2YzYwLjMxLjEwMgD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwCgboJN+8+VhU32mVuQePpVG8uka6ZvJIAP5Vft2V4VZVOD61nKyNY3aM27uWNy0BVdpOc1vWsS/Z047UUUpLRDi3c//9k=)" class="still span-6 start-7"><img width="720" height="1280" src="media/img/ordinacija-police.jpg" srcset="media/img/ordinacija-police-480.jpg 480w, media/img/ordinacija-police.jpg 720w" sizes="(max-width: 639px) 92vw, (max-width: 1023px) 46vw, 628px" alt="Ordinacija: drveni zid sa letvicama, police i sto za tretman" loading="lazy" style="--pos: 50% 22%" data-source="client" data-subject="prostor ordinacije"></figure>
+    </div>
+  </section>
+</main>
+
+<footer class="footer closing" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--type">
+      <div class="section-head">
+        <h2 id="close-h">Vidimo se u <em>ordinaciji</em></h2>
+        <p>Termin zakazuješ preko forme ili porukom na Instagramu.</p>
+      </div>
+      <a class="btn btn--primary btn--xl btn--wide" href="#zakazi">Zakaži termin<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-6 stack-4">
+          <a class="nav__logo" href="#top"><span class="mark" data-mark="arc" aria-hidden="true"></span>ProTherapy</a>
+          <p class="footer__lede">Kiropraktičar Dejan Maćešić, Novi Sad.</p>
+        </div>
+        <div class="span-2 footer__col"><h3>Tretman</h3><ul><li><a href="#teme">S čim ljudi dolaze</a></li><li><a href="#termin">Kako izgleda termin</a></li><li><a href="#pitanja">Česta pitanja</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Programi</h3><ul><li><a href="vodic-ledja.html">Vodič LEĐA</a></li><li><a href="uspravno.html">Uspravno: 21 dan</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Ordinacija</h3><ul><li><a href="#visit">Gde smo</a></li><li><a href="#dejan">O Dejanu</a></li><li><a href="https://www.instagram.com/dejan.protherapy/" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; 2026 Kiropraktika ProTherapy. Sadržaj sajta je informativan i ne zamenjuje lekarski pregled.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<nav class="actionbar" aria-label="Brze akcije">
+  <a class="btn btn--primary" href="#zakazi">Zakaži termin</a>
+</nav>
+
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
+<script type="module" src="site.js"></script>
+</body>
+</html>
